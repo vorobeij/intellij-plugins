@@ -7,14 +7,14 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.psi.PsiDirectory
 import de.maibornwolff.its.buildergenerator.actions.SourceRootChoice
-import de.maibornwolff.its.buildergenerator.generator.BuilderGenerator
+import de.maibornwolff.its.buildergenerator.generator.TestClassGenerator
 import de.maibornwolff.its.buildergenerator.service.FileService
 import de.maibornwolff.its.buildergenerator.settings.AppSettingsState
 import de.maibornwolff.its.buildergenerator.util.getClassUnderCaret
 import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.psi.KtClass
 
-class VorobeijGenerate : AnAction("Koin test class") {
+class VorobeijGenerate : AnAction("Dao test") {
 
     override fun actionPerformed(event: AnActionEvent) {
 
@@ -32,7 +32,7 @@ class VorobeijGenerate : AnAction("Koin test class") {
         val currentConfig = AppSettingsState.getInstance().config
         val builderDirectory = SourceRootChoice.chooseTargetDirectory(ktClass, project)
         val generatedName = ktClass.name + currentConfig.testClassSuffix
-        val generatedFileText = BuilderGenerator(currentConfig, project).generateTest(ktClass, generatedName)
+        val generatedFileText = TestClassGenerator(currentConfig, project).generateTest(ktClass, generatedName)
         val builderFileName = "${generatedName}.${KotlinFileType.EXTENSION}"
         val fileService = project.service<FileService>()
         overwriteWithPromptAndOpen(project, fileService, builderDirectory, builderFileName, generatedFileText)

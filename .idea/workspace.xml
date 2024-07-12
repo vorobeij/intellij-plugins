@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a9feca1-1dfc-402c-b913-2dde9f069bc0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Method.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/GenerateBuilderAction.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/SourceRootChoice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/SourceRootChoice.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/BuilderGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/BuilderGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/GeneratorConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/GeneratorConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Property.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Property.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/BuilderGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/TestClassGenerator.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +105,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="de.maibornwolff.its.buildergenerator.generator" />
       <recent name="com.github.vorobeij.intellijplugins.actions" />
       <recent name="com.github.vorobeij.intellijplugins.listeners" />
     </key>
@@ -195,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720814399613</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="generate class">
+      <option name="closed" value="true" />
+      <created>1720817097946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720817097946</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
