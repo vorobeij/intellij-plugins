@@ -5,15 +5,16 @@
     <vendor>vorobeij</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
 
     <actions>
 
-        <group>
-            <action id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
-                    class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
-                    text="vorobeij generate koin test"
-                    description="vorobeij generate koin test"/>
-            <add-to-group group-id="GenerateGroup" anchor="first"/>
-        </group>
+        <action class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
+                description="vorobeij generate koin test"
+                id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
+                text="vorobeij generate koin test">
+            <add-to-group anchor="last" group-id="GenerateGroup"/>
+            <keyboard-shortcut first-keystroke="option t" keymap="$default"/>
+        </action>
     </actions>
 </idea-plugin>

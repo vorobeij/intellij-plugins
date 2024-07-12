@@ -1,26 +1,62 @@
 package com.github.vorobeij.intellijplugins.actions
 
-import com.intellij.codeInsight.CodeInsightActionHandler
-import com.intellij.codeInsight.actions.CodeInsightAction
-import com.intellij.openapi.editor.Editor
-import com.intellij.openapi.project.Project
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.LangDataKeys
+import com.intellij.openapi.actionSystem.PlatformDataKeys
+import com.intellij.openapi.roots.ModuleRootManager
+import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
+import com.intellij.psi.PsiFileFactory
+import com.intellij.psi.PsiManager
+import org.jetbrains.kotlin.idea.KotlinLanguage
+import org.jetbrains.kotlin.idea.refactoring.psiElement
 
-class VorobeijGenerate: CodeInsightAction(), CodeInsightActionHandler {
-    /**
-     * Called when user invokes corresponding [CodeInsightAction]. This method is called inside command on EDT.
-     * If [.startInWriteAction] returns `true`, this method is also called
-     * inside write action.
-     *
-     * @param project the project where action is invoked.
-     * @param editor  the editor where action is invoked.
-     * @param file    the file open in the editor.
-     */
-    override fun invoke(project: Project, editor: Editor, file: PsiFile) {
-        println("sakldfnskdljfn invoked!")
+class VorobeijGenerate : AnAction("Koin test class") {
+
+    override fun actionPerformed(event: AnActionEvent) {
+        val psiFileFactory = PsiFileFactory.getInstance(event.project)
+
+        val name = "test.kt"
+        val file = psiFileFactory.createFileFromText(
+            name,
+            KotlinLanguage.INSTANCE,
+            createContents(event)
+        )
+
+        val dir = directory(event)
+        // todo find directory for tests
+
+        event.project.executeCouldRollBackAction {
+            dir?.findFile(name) ?: dir?.add(file)
+        }
     }
 
-    override fun getHandler(): CodeInsightActionHandler {
-        return this
+    private fun directory(event: AnActionEvent): PsiDirectory? {
+        val project = event.getData(PlatformDataKeys.PROJECT) ?: return null
+
+        val dataContext = event.dataContext
+        val module = LangDataKeys.MODULE.getData(dataContext) ?: return null
+
+        val directory = when (val navigatable = LangDataKeys.NAVIGATABLE.getData(dataContext)) {
+            is PsiDirectory -> navigatable
+            is PsiFile -> navigatable.containingDirectory
+            else -> {
+                val root = ModuleRootManager.getInstance(module)
+                root.sourceRoots
+                    .asSequence()
+                    .mapNotNull {
+                        PsiManager.getInstance(project).findDirectory(it)
+                    }.firstOrNull()
+            }
+        } ?: return null
+
+        return directory
+    }
+
+    private fun createContents(event: AnActionEvent): String {
+        return """
+            ${event.dataContext.psiElement?.containingFile}
+        """.trimIndent()
     }
 }
