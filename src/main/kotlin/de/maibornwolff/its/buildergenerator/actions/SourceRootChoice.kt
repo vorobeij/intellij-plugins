@@ -14,8 +14,6 @@ import org.jetbrains.kotlin.idea.util.sourceRoots
 import org.jetbrains.kotlin.psi.KtClass
 import org.slf4j.LoggerFactory
 
-// TODO: this needs tests...
-
 object SourceRootChoice {
 
     private val LOGGER = LoggerFactory.getLogger(SourceRootChoice::class.java)

@@ -36,7 +36,7 @@ data class Property(
         project: Project,
         config: GeneratorConfig
     ): PropertyBuilder? {
-        val expectedBuilderClassName = "${type.simpleName}${config.builderClassSuffix}"
+        val expectedBuilderClassName = "${type.simpleName}${config.testClassSuffix}"
         val propertyBuilderKtFile: KtFile? = PsiShortNamesCache.getInstance(project)
             .getFilesByName("$expectedBuilderClassName.kt").singleOrNull() as? KtFile
         val propertyBuilderClass = propertyBuilderKtFile?.classes
@@ -56,7 +56,7 @@ data class Property(
         return if (propertyBuilder != null) {
             CodeBlock.Builder()
                 .add("%T", ClassName(propertyBuilder.packageName, propertyBuilder.name))
-                .add("().${config.buildFunctionName}()")
+                .add("().sdfsdf()")
                 .build()
         } else null
     }
