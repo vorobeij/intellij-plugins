@@ -34,12 +34,14 @@ kotlin {
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     pluginName = properties("pluginName")
+//    localPath = properties("localPath")
     version = properties("platformVersion")
     type = properties("platformType")
 
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
     plugins = properties("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) }
 }
+
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
@@ -94,6 +96,12 @@ tasks {
             }
         }
     }
+
+//    runIde {
+//        jbrArch = "aarch64"
+//        autoReloadPlugins = true
+//        jbrVersion="17.0.11-b1207.24"
+//    }
 
     // Configure UI tests plugin
     // Read more: https://github.com/JetBrains/intellij-ui-test-robot
