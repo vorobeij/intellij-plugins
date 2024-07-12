@@ -17,4 +17,15 @@
             <keyboard-shortcut first-keystroke="option t" keymap="$default"/>
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="de.maibornwolff.its.buildergenerator.settings.AppSettingsState"/>
+        <applicationConfigurable displayName="Kotlin Builder Generator"
+                                 id="de.maibornwolff.its.buildergenerator.settings.AppSettingsConfigurable"
+                                 instance="de.maibornwolff.its.buildergenerator.settings.AppSettingsConfigurable"
+                                 parentId="tools"/>
+
+        <projectService serviceImplementation="de.maibornwolff.its.buildergenerator.service.FileServiceImpl"
+                        serviceInterface="de.maibornwolff.its.buildergenerator.service.FileService"/>
+    </extensions>
 </idea-plugin>

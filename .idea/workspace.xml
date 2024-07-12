@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9feca1-1dfc-402c-b913-2dde9f069bc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_reflect_1_9_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_9_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/ExecuteCouldRollBackAction.kt" afterDir="false" />
+    <list default="true" id="8a9feca1-1dfc-402c-b913-2dde9f069bc0" name="Changes" comment="setup">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_kotlinpoet_1_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/GenerateBuilderAction.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/SourceRootChoice.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/BuilderGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/GeneratorConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Property.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/PropertyBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/WrappedPrimitive.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/service/FileService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsConfigurable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/util/IdeaExtensions.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/intellij-plugins.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/intellij-plugins.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/intellij-plugins.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/intellij-plugins.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -89,13 +101,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.MyPluginTest.executor": "Run",
-    "Gradle.Run Plugin.executor": "Debug",
+    "Gradle.Run Plugin.executor": "Run",
     "Gradle.intellij-plugins [build].executor": "Run",
     "Gradle.intellij-plugins [setupDependencies].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/sj/Development/IdeaProjects/intellij-plugins/src/main/kotlin",
     "settings.editor.selected.configurable": "preferences.keymap"
   },
   "keyToStringList": {
@@ -105,6 +118,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.github.vorobeij.intellijplugins.actions" />
       <recent name="com.github.vorobeij.intellijplugins.listeners" />
@@ -176,17 +193,32 @@
       <option name="presentableId" value="Default" />
       <updated>1720724942754</updated>
     </task>
+    <task id="LOCAL-00001" summary="setup">
+      <option name="closed" value="true" />
+      <created>1720785961271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720785961271</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt</url>
-          <line>40</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="relativeSourceRootPathsFromProjectRoot" />
+        <watch expression="module.sourceRoots" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
