@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a9feca1-1dfc-402c-b913-2dde9f069bc0" name="Changes" comment="done">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_kotlinpoet_1_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/intellij-plugins.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/intellij-plugins.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/intellij-plugins.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/intellij-plugins.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/Type.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/WrappedPrimitive.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/WrappedPrimitive.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsConfigurable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/settings/AppSettingsConfigurable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +56,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "vorobeij"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/vorobeij/intellij-plugins.git",
+    "accountId": "874f22b1-4b87-4966-ba1f-799cd66ba222"
+  }
+}]]></component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -121,7 +123,7 @@
       <recent name="com.github.vorobeij.intellijplugins.actions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.intellij-plugins [build]">
+  <component name="RunManager" selected="Gradle.Run Plugin">
     <configuration name="MyPluginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -232,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720818887641</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="done">
+      <option name="closed" value="true" />
+      <created>1720858310726</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720858310726</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -248,15 +258,6 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="relativeSourceRootPathsFromProjectRoot" />
