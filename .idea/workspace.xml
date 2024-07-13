@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a9feca1-1dfc-402c-b913-2dde9f069bc0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerateQueryBuilderTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/generator/QueryBuilderTestClassGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/SourceRootChoice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/actions/SourceRootChoice.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/GeneratorConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/GeneratorConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/TestClassGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/TestClassGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerateDaoTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/VorobeijGenerateDaoTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator/generator/TestClassGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/generator/DaoTestClassGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,12 +118,17 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/de/maibornwolff/its/buildergenerator" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/github/vorobeij/intellijplugins/actions/utils" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="de.maibornwolff.its.buildergenerator.generator" />
+      <recent name="com.github.vorobeij.intellijplugins.generator" />
       <recent name="com.github.vorobeij.intellijplugins.actions" />
+      <recent name="de.maibornwolff.its.buildergenerator.generator" />
       <recent name="com.github.vorobeij.intellijplugins.listeners" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.github.vorobeij.intellijplugins.generator" />
       <recent name="com.github.vorobeij.intellijplugins.actions" />
     </key>
   </component>
@@ -253,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720860247226</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1720863647851</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720863647851</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +278,8 @@
     <MESSAGE value="done?" />
     <MESSAGE value="done" />
     <MESSAGE value="retrieve class from context" />
-    <option name="LAST_COMMIT_MESSAGE" value="retrieve class from context" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

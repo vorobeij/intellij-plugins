@@ -1,13 +1,15 @@
-package de.maibornwolff.its.buildergenerator.generator
+package com.github.vorobeij.intellijplugins.generator
 
 import com.intellij.openapi.project.Project
+import de.maibornwolff.its.buildergenerator.generator.GeneratorConfig
+import de.maibornwolff.its.buildergenerator.generator.Method
 import org.jetbrains.kotlin.descriptors.SimpleFunctionDescriptor
 import org.jetbrains.kotlin.idea.caches.resolve.analyzeWithContent
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.resolve.BindingContext
 import org.jetbrains.kotlin.resolve.lazy.descriptors.LazyClassDescriptor
 
-class TestClassGenerator(private val config: GeneratorConfig, private val project: Project) {
+class DaoTestClassGenerator(private val config: GeneratorConfig, private val project: Project) {
 
     fun generateTest(builtClass: KtClass, generatedName: String): String {
 

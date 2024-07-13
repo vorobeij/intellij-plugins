@@ -15,6 +15,12 @@
                 text="vorobeij generate dao test">
             <add-to-group anchor="last" group-id="GenerateGroup"/>
         </action>
+        <action class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerateQueryBuilderTest"
+                description="vorobeij generate query builder test"
+                id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerateQueryBuilderTest"
+                text="vorobeij generate query builder test">
+            <add-to-group anchor="last" group-id="GenerateGroup"/>
+        </action>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">

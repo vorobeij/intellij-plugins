@@ -1,6 +1,6 @@
 package com.github.vorobeij.intellijplugins.actions
 
-import com.github.vorobeij.intellijplugins.generator.DaoTestClassGenerator
+import com.github.vorobeij.intellijplugins.generator.QueryBuilderTestClassGenerator
 import com.github.vorobeij.intellijplugins.utils.overwriteWithPromptAndOpen
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.idea.refactoring.psiElement
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtFile
 
-class VorobeijGenerateDaoTest : AnAction("vorobeij DAO test") {
+class VorobeijGenerateQueryBuilderTest : AnAction("vorobeij QueryBuilder test") {
 
     override fun actionPerformed(event: AnActionEvent) {
 
@@ -42,7 +42,7 @@ class VorobeijGenerateDaoTest : AnAction("vorobeij DAO test") {
         val currentConfig = AppSettingsState.getInstance().config
         val builderDirectory = SourceRootChoice.chooseTargetDirectory(ktClass, project)
         val generatedName = ktClass.name + currentConfig.testClassSuffix
-        val generatedFileText = DaoTestClassGenerator(currentConfig, project).generateTest(ktClass, generatedName)
+        val generatedFileText = QueryBuilderTestClassGenerator(currentConfig, project).generateTest(ktClass, generatedName)
         val builderFileName = "${generatedName}.${KotlinFileType.EXTENSION}"
         val fileService = project.service<FileService>()
         overwriteWithPromptAndOpen(project, fileService, builderDirectory, builderFileName, generatedFileText)
