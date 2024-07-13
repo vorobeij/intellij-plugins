@@ -44,7 +44,7 @@ internal class $generatedName: ${config.extendsList} {
 
     private fun methodsTemplate(methods: List<Method>) = methods.joinToString("\n") {
         """
-@org.junit.jupiter.api.Test
+@Test
 fun ${it.name}(): Unit = testApplicationX {
     dao.${it.name}(${it.params.joinToString(",\n") { "${it.name} = TODO()" }})
 }

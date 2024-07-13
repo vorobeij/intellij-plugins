@@ -1,12 +1,12 @@
 package com.github.vorobeij.intellijplugins.actions
 
+import com.github.vorobeij.intellijplugins.utils.overwriteWithPromptAndOpen
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
-import com.intellij.psi.PsiDirectory
 import de.maibornwolff.its.buildergenerator.actions.SourceRootChoice
 import de.maibornwolff.its.buildergenerator.generator.TestClassGenerator
 import de.maibornwolff.its.buildergenerator.service.FileService
@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.idea.refactoring.psiElement
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtFile
 
-class VorobeijGenerate : AnAction("vorobeij DAO test") {
+class VorobeijGenerateDaoTest : AnAction("vorobeij DAO test") {
 
     override fun actionPerformed(event: AnActionEvent) {
 
@@ -30,7 +30,7 @@ class VorobeijGenerate : AnAction("vorobeij DAO test") {
             } else {
                 Messages.showMessageDialog(
                     it,
-                    event.dataContext.getData("psi.Element").toString(),
+                    event.dataContext.psiElement.toString(),
                     "Builder Generator Error",
                     Messages.getErrorIcon()
                 )
@@ -46,45 +46,5 @@ class VorobeijGenerate : AnAction("vorobeij DAO test") {
         val builderFileName = "${generatedName}.${KotlinFileType.EXTENSION}"
         val fileService = project.service<FileService>()
         overwriteWithPromptAndOpen(project, fileService, builderDirectory, builderFileName, generatedFileText)
-    }
-
-    private fun overwriteWithPromptAndOpen(
-        project: Project,
-        fileService: FileService,
-        directory: PsiDirectory,
-        fileName: String,
-        contents: String
-    ) {
-        val existingBuilderFile = fileService.getFileOrNull(directory, fileName)
-        if (existingBuilderFile == null || getOverwriteConfirmation(project, fileName)) {
-            fileService.withWriter {
-                val psiFileToOpen = if (existingBuilderFile == null)
-                    this.createFile(directory, fileName, contents)
-                else
-                    this.overwriteFile(existingBuilderFile, contents)
-                this.reformat(psiFileToOpen)
-                this.openInTab(psiFileToOpen)
-            }
-        }
-    }
-
-    private fun showOnlyDataClassesAllowedMessage(project: Project) {
-        Messages.showMessageDialog(
-            project,
-            "For top level classes only",
-            "Builder Generator Error",
-            Messages.getErrorIcon()
-        )
-    }
-
-    private fun getOverwriteConfirmation(project: Project, fileName: String): Boolean {
-        val result = Messages.showOkCancelDialog(
-            project,
-            "Target file '$fileName' already exists and will be overwritten. Continue?",
-            "Overwrite Existing File?", "Overwrite", "Cancel",
-            Messages.getWarningIcon()
-        )
-
-        return result == Messages.OK
     }
 }

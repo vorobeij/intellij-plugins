@@ -22,7 +22,7 @@ object SourceRootChoice {
         return dataClass.module?.let { module ->
             val projectRootPath = project.basePath ?: return@let logAndReturnNull("No project base path")
 
-            val relativeSourceRootPathsFromProjectRoot = module.sourceRoots
+            val relativeSourceRootPathsFromProjectRoot = listOf("/app/src/test/kotlin") + module.sourceRoots
                 .mapNotNull { it.canonicalPath?.replace(projectRootPath, "") }
                 .filter { it.contains("/kotlin") }
                 .map { it.replace("main", "test") }

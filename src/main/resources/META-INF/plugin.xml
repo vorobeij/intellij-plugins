@@ -9,9 +9,9 @@
 
     <actions>
 
-        <action class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
+        <action class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerateDaoTest"
                 description="vorobeij generate dao test"
-                id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
+                id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerateDaoTest"
                 text="vorobeij generate dao test">
             <add-to-group anchor="last" group-id="GenerateGroup"/>
         </action>
