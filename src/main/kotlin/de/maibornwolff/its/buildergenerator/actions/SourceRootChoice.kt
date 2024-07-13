@@ -11,14 +11,14 @@ import java.io.File
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 import org.jetbrains.kotlin.idea.util.sourceRoot
 import org.jetbrains.kotlin.idea.util.sourceRoots
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.slf4j.LoggerFactory
 
 object SourceRootChoice {
 
     private val LOGGER = LoggerFactory.getLogger(SourceRootChoice::class.java)
 
-    fun chooseTargetDirectory(dataClass: KtClass, project: Project): PsiDirectory {
+    fun chooseTargetDirectory(dataClass: KtClassOrObject, project: Project): PsiDirectory {
         return dataClass.module?.let { module ->
             val projectRootPath = project.basePath ?: return@let logAndReturnNull("No project base path")
 

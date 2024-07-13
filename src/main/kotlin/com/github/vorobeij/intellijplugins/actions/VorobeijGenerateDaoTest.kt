@@ -1,10 +1,10 @@
 package com.github.vorobeij.intellijplugins.actions
 
 import com.github.vorobeij.intellijplugins.generator.DaoTestClassGenerator
+import com.github.vorobeij.intellijplugins.utils.containingClassOrObject
 import com.github.vorobeij.intellijplugins.utils.overwriteWithPromptAndOpen
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
@@ -13,18 +13,14 @@ import de.maibornwolff.its.buildergenerator.service.FileService
 import de.maibornwolff.its.buildergenerator.settings.AppSettingsState
 import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.idea.refactoring.psiElement
-import org.jetbrains.kotlin.psi.KtClass
-import org.jetbrains.kotlin.psi.KtFile
+import org.jetbrains.kotlin.psi.KtClassOrObject
 
 class VorobeijGenerateDaoTest : AnAction("vorobeij DAO test") {
 
     override fun actionPerformed(event: AnActionEvent) {
 
         event.project?.let {
-            val classUnderCaret = (event.dataContext.psiElement as? KtClass)
-                ?: (event.dataContext.getData(CommonDataKeys.PSI_FILE) as KtFile)
-                    .children.filterIsInstance<KtClass>()
-                    .firstOrNull()
+            val classUnderCaret = event.containingClassOrObject()
             if (classUnderCaret != null) {
                 generateBuilder(classUnderCaret, it)
             } else {
@@ -38,7 +34,7 @@ class VorobeijGenerateDaoTest : AnAction("vorobeij DAO test") {
         }
     }
 
-    private fun generateBuilder(ktClass: KtClass, project: Project) {
+    private fun generateBuilder(ktClass: KtClassOrObject, project: Project) {
         val currentConfig = AppSettingsState.getInstance().config
         val builderDirectory = SourceRootChoice.chooseTargetDirectory(ktClass, project)
         val generatedName = ktClass.name + currentConfig.testClassSuffix
