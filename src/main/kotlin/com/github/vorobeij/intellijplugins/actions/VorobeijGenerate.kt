@@ -14,16 +14,21 @@ import de.maibornwolff.its.buildergenerator.util.getClassUnderCaret
 import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.psi.KtClass
 
-class VorobeijGenerate : AnAction("Dao test") {
+class VorobeijGenerate : AnAction("vorobeij DAO test") {
 
     override fun actionPerformed(event: AnActionEvent) {
 
         event.project?.let {
             val classUnderCaret = event.getClassUnderCaret()
-            if (classUnderCaret?.isTopLevel() == true) {
+            if (classUnderCaret != null) {
                 generateBuilder(classUnderCaret, it)
             } else {
-                showOnlyDataClassesAllowedMessage(it)
+                Messages.showMessageDialog(
+                    it,
+                    event.dataContext.getData("psi.Element").toString(),
+                    "Builder Generator Error",
+                    Messages.getErrorIcon()
+                )
             }
         }
     }
@@ -61,7 +66,7 @@ class VorobeijGenerate : AnAction("Dao test") {
     private fun showOnlyDataClassesAllowedMessage(project: Project) {
         Messages.showMessageDialog(
             project,
-            "Builder generation only works for Kotlin data classes",
+            "For top level classes only",
             "Builder Generator Error",
             Messages.getErrorIcon()
         )

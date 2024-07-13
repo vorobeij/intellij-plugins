@@ -1,8 +1,5 @@
 package de.maibornwolff.its.buildergenerator.generator
 
-import com.squareup.kotlinpoet.ClassName
-import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
-import com.squareup.kotlinpoet.TypeName
 import org.jetbrains.kotlin.idea.refactoring.fqName.fqName
 import org.jetbrains.kotlin.types.KotlinType
 
@@ -29,11 +26,4 @@ data class Type(
         }
     }
 
-    val typeName: TypeName =
-        ClassName(packageName, simpleName)
-            .let { className ->
-                if (typeArguments.isEmpty()) className
-                else className.parameterizedBy(typeArguments.map { it.typeName })
-            }
-            .copy(nullable = isNullable)
 }

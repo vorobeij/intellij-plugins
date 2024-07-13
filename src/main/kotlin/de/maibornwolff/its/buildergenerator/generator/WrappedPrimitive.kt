@@ -1,7 +1,5 @@
 package de.maibornwolff.its.buildergenerator.generator
 
-import com.squareup.kotlinpoet.ClassName
-import com.squareup.kotlinpoet.TypeName
 import org.jetbrains.kotlin.idea.refactoring.fqName.fqName
 import org.jetbrains.kotlin.js.descriptorUtils.nameIfStandardType
 import org.jetbrains.kotlin.resolve.lazy.descriptors.LazyClassMemberScope
@@ -38,7 +36,4 @@ data class WrappedPrimitive(
         }
     }
 
-    val typeName: TypeName =
-        ClassName(packageName, simpleName)
-            .copy(nullable = isNullable)
 }

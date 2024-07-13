@@ -24,7 +24,6 @@ repositories {
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
     implementation(kotlin("reflect")) // todo needed?
-    implementation("com.squareup:kotlinpoet:1.10.2")
 }
 
 // Set the JVM language level used to build the project.
@@ -97,12 +96,6 @@ tasks {
             }
         }
     }
-
-//    runIde {
-//        jbrArch = "aarch64"
-//        autoReloadPlugins = true
-//        jbrVersion="17.0.11-b1207.24"
-//    }
 
     // Configure UI tests plugin
     // Read more: https://github.com/JetBrains/intellij-ui-test-robot

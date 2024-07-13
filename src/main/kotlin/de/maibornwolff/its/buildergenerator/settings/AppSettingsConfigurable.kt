@@ -20,5 +20,5 @@ class AppSettingsConfigurable : Configurable {
     }
 
     override fun getDisplayName() =
-        "Kotlin Builder Generator"
+        "vorobeij Generator"
 }

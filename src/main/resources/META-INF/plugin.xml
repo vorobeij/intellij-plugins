@@ -10,17 +10,16 @@
     <actions>
 
         <action class="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
-                description="vorobeij generate koin test"
+                description="vorobeij generate dao test"
                 id="com.github.vorobeij.intellijplugins.actions.VorobeijGenerate"
-                text="vorobeij generate koin test">
+                text="vorobeij generate dao test">
             <add-to-group anchor="last" group-id="GenerateGroup"/>
-            <keyboard-shortcut first-keystroke="option t" keymap="$default"/>
         </action>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="de.maibornwolff.its.buildergenerator.settings.AppSettingsState"/>
-        <applicationConfigurable displayName="Kotlin Builder Generator"
+        <applicationConfigurable displayName="vorobeij Generator"
                                  id="de.maibornwolff.its.buildergenerator.settings.AppSettingsConfigurable"
                                  instance="de.maibornwolff.its.buildergenerator.settings.AppSettingsConfigurable"
                                  parentId="tools"/>
