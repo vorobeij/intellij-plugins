@@ -50,7 +50,7 @@ internal class $generatedName: ${config.extendsList} {
 fun ${it.name}(): Unit = testApplicationX {
     dao.${it.name}(${it.params.joinToString(",\n") { "${it.name} = TODO()" }})
 }
-"""
+""".withFixtures()
     }
 
 }

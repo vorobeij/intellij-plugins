@@ -30,6 +30,7 @@ import org.junit.jupiter.api.Test
 import ru.vorobeij.backend.sub.core.ext.exec
 import ru.vorobeij.suby.client.api.core.ClosingKoinTest
 import ru.vorobeij.suby.client.api.core.testQuery
+import org.koin.test.inject
 
 internal class $generatedName: ${config.extendsList} {
 
@@ -37,10 +38,7 @@ internal class $generatedName: ${config.extendsList} {
     
     ${methodsTemplate(methods)}
 }
-        """
-            .replace("languageCode = TODO()", "languageCode = \"en\"")
-            .replace("videoId = TODO()", "videoId = testVideoId")
-            .replace("channelId = TODO()", "channelId = testChannelId")
+        """.withFixtures()
     }
 
     private fun methodsTemplate(methods: List<Method>) = methods.joinToString("\n") {
@@ -52,5 +50,12 @@ fun ${it.name}(): Unit = testQuery {
 }
 """
     }
-
 }
+
+fun String.withFixtures() = this
+    .replace("languageCode = TODO()", "languageCode = \"en\"")
+    .replace("videoId = TODO()", "videoId = testVideoId")
+    .replace("channelId = TODO()", "channelId = testChannelId")
+    .replace("userId = TODO()", "userId = testUserId")
+    .replace("limit = TODO()", "limit = 10")
+    .replace("reason = TODO()", "reason = 1")
